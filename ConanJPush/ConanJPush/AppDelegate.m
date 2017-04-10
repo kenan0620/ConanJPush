@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AppDelegate+JPush.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //    极光推送
+    [self registerJPush:application options:launchOptions];
     return YES;
 }
 

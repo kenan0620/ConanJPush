@@ -15,6 +15,7 @@
 		272747111E9B86E000251B7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2727470F1E9B86E000251B7F /* LaunchScreen.storyboard */; };
 		2727471C1E9B86E000251B7F /* ConanJPushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2727471B1E9B86E000251B7F /* ConanJPushTests.m */; };
 		272747271E9B86E000251B7F /* ConanJPushUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 272747261E9B86E000251B7F /* ConanJPushUITests.m */; };
+		272747361E9B875D00251B7F /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 272747351E9B875D00251B7F /* AppDelegate+JPush.m */; };
 		DA8C4D07F551A44D819C31A0 /* libPods-ConanJPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF001FD8B2AA01BC01E97DB0 /* libPods-ConanJPush.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,9 @@
 		272747221E9B86E000251B7F /* ConanJPushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConanJPushUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		272747261E9B86E000251B7F /* ConanJPushUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConanJPushUITests.m; sourceTree = "<group>"; };
 		272747281E9B86E000251B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		272747341E9B875C00251B7F /* AppDelegate+JPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JPush.h"; sourceTree = "<group>"; };
+		272747351E9B875D00251B7F /* AppDelegate+JPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
+		272747371E9B877A00251B7F /* ConanJPush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConanJPush.entitlements; sourceTree = "<group>"; };
 		673FFA7BEA618E78EC91388D /* Pods-ConanJPush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConanJPush.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConanJPush/Pods-ConanJPush.debug.xcconfig"; sourceTree = "<group>"; };
 		FF001FD8B2AA01BC01E97DB0 /* libPods-ConanJPush.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConanJPush.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,8 +112,11 @@
 		272747001E9B86E000251B7F /* ConanJPush */ = {
 			isa = PBXGroup;
 			children = (
+				272747371E9B877A00251B7F /* ConanJPush.entitlements */,
 				272747041E9B86E000251B7F /* AppDelegate.h */,
 				272747051E9B86E000251B7F /* AppDelegate.m */,
+				272747341E9B875C00251B7F /* AppDelegate+JPush.h */,
+				272747351E9B875D00251B7F /* AppDelegate+JPush.m */,
 				272747071E9B86E000251B7F /* ViewController.h */,
 				272747081E9B86E000251B7F /* ViewController.m */,
 				2727470A1E9B86E000251B7F /* Main.storyboard */,
@@ -236,6 +243,14 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 938EMAYW6W;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					272747161E9B86E000251B7F = {
 						CreatedOnToolsVersion = 8.3;
@@ -354,6 +369,7 @@
 				272747091E9B86E000251B7F /* ViewController.m in Sources */,
 				272747061E9B86E000251B7F /* AppDelegate.m in Sources */,
 				272747031E9B86E000251B7F /* main.m in Sources */,
+				272747361E9B875D00251B7F /* AppDelegate+JPush.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,10 +521,11 @@
 			baseConfigurationReference = 673FFA7BEA618E78EC91388D /* Pods-ConanJPush.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ConanJPush/ConanJPush.entitlements;
 				DEVELOPMENT_TEAM = 938EMAYW6W;
 				INFOPLIST_FILE = ConanJPush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ConanGroup.ConanJPush;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Conan.ConanJPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -518,10 +535,11 @@
 			baseConfigurationReference = 266CCE5A31548BCDA928B290 /* Pods-ConanJPush.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ConanJPush/ConanJPush.entitlements;
 				DEVELOPMENT_TEAM = 938EMAYW6W;
 				INFOPLIST_FILE = ConanJPush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ConanGroup.ConanJPush;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Conan.ConanJPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -595,6 +613,7 @@
 				2727472D1E9B86E000251B7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2727472E1E9B86E000251B7F /* Build configuration list for PBXNativeTarget "ConanJPushTests" */ = {
 			isa = XCConfigurationList;
@@ -603,6 +622,7 @@
 				272747301E9B86E000251B7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		272747311E9B86E000251B7F /* Build configuration list for PBXNativeTarget "ConanJPushUITests" */ = {
 			isa = XCConfigurationList;
@@ -611,6 +631,7 @@
 				272747331E9B86E000251B7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
