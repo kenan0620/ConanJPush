@@ -1,0 +1,10 @@
+
+platform:ios,’8.0’
+
+target ‘ConanJPush’ do
+
+pod 'JPush', '~> 3.0.3'
+
+end
+
+ 
